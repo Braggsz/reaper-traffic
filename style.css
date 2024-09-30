@@ -1,0 +1,211 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4; /* Светлый фон для контраста */
+  color: #333;
+  padding: 20px;
+  animation: fadeIn 1s ease-in; /* Анимация при загрузке */
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень для контейнера */
+  animation: slideIn 0.5s ease-in; /* Анимация появления контейнера */
+}
+
+h1.main-title {
+  text-align: center;
+  color: #2c3e50; /* Темный цвет для заголовка */
+  margin-bottom: 20px;
+  text-transform: uppercase; /* Заглавные буквы */
+  animation: colorChangeMain 5s infinite alternate; /* Анимация изменения цвета */
+}
+
+.section {
+  margin-bottom: 20px;
+  padding: 15px;
+  border-left: 5px solid #3498db; /* Синий акцент */
+  transition: transform 0.3s, background-color 0.3s; /* Плавное перемещение и изменение фона */
+}
+
+.section:hover {
+  transform: translateX(5px); /* Эффект при наведении */
+  background-color: #ecf0f1; /* Изменение фона при наведении */
+}
+
+.description, .note, .help-text {
+  font-size: 1.1em; /* Увеличенный шрифт для лучшей читаемости */
+}
+
+/* Анимация для описания */
+.description {
+  animation: fadeInLeft 0.8s ease; /* Анимация появления текста слева */
+}
+
+/* Анимация для заметки */
+.note {
+  animation: bounceIn 0.7s ease; /* Анимация для заметки */
+}
+
+/* Анимация для текстов помощи */
+.help-text {
+  animation: slideInRight 0.8s ease; /* Анимация появления текста справа */
+  animation-delay: 0.3s; /* Задержка анимации */
+}
+
+.highlight {
+  color: #3498db; /* Синий цвет для выделенного текста */
+  text-decoration: underline; /* Подчеркивание */
+}
+
+.highlight-em {
+  color: #e67e22; /* Оранжевый цвет для выделенного текста */
+}
+
+/* Кнопки */
+.button, .button.secondary {
+  display: inline-block;
+  background-color: #3498db; /* Синий фон для кнопок */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Плавное изменение фона, размера и тени */
+}
+
+.button:hover {
+  background-color: #2980b9; /* Темнее при наведении */
+  transform: scale(1.05); /* Увеличение кнопки при наведении */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тень при наведении */
+}
+
+.button.secondary {
+  background-color: #e67e22; /* Оранжевый фон для вторичной кнопки */
+}
+
+.button.secondary:hover {
+  background-color: #d35400; /* Темнее при наведении */
+}
+
+/* Анимации */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+      transform: translateY(-20px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+@keyframes textPop {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.1);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+/* Анимация для описания */
+@keyframes fadeInLeft {
+  from {
+      opacity: 0;
+      transform: translateX(-50px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+/* Анимация для заметки */
+@keyframes bounceIn {
+  0% {
+      opacity: 0;
+      transform: scale(0.5);
+  }
+  50% {
+      opacity: 1;
+      transform: scale(1.05);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+/* Анимация для текстов помощи */
+@keyframes slideInRight {
+  from {
+      opacity: 0;
+      transform: translateX(50px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+/* Анимация смены цвета для основного текста */
+@keyframes colorChangeMain {
+  0% {
+      color: #2c3e50; /* Начальный цвет (темно-синий) */
+  }
+  25% {
+      color: #e67e22; /* Оранжевый цвет */
+  }
+  50% {
+      color: #3498db; /* Синий цвет */
+  }
+  75% {
+      color: #9b59b6; /* Фиолетовый цвет */
+  }
+  100% {
+      color: #2c3e50; /* Возвращаемся к начальному цвету */
+  }
+}
+
+/* Анимация смены цвета для остальных текстов */
+@keyframes colorChangeText {
+  0% {
+      color: #333; /* Начальный цвет */
+  }
+  25% {
+      color: #8e44ad; /* Фиолетовый цвет */
+  }
+  50% {
+      color: #27ae60; /* Зеленый цвет */
+  }
+  75% {
+      color: #e67e22; /* Оранжевый цвет */
+  }
+  100% {
+      color: #333; /* Возвращаемся к начальному цвету */
+  }
+}
+
+/* Применение анимаций к тексту */
+.animated-text {
+  animation: colorChangeText 5s infinite alternate; /* Цвет текста изменяется плавно */
+}
+
+/* Применение анимации для заголовка */
+.main-title {
+  animation: colorChangeMain 5s infinite alternate; /* Основной текст меняет цвет */
+}
